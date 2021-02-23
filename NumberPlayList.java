@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
+
 
 public class NumberPlayList {
 
@@ -50,6 +52,13 @@ public class NumberPlayList {
 		myNumberList.forEach( n-> {
 
 				System.out.println("method 5 for each lambda element value :" +n);
+		});
+
+               //method 6: explicit lambda function print double vale
+		Function<Integer, Double> doubleFunction = Integer::doubleValue;
+		myNumberList.forEach( n -> {
+			
+	        	       System.out.println("method 6 for each lambda double value :" +doubleFunction.apply(n));
 		});
 		
 	}
