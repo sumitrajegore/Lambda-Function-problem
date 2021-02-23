@@ -3,6 +3,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 
 public class NumberPlayList {
@@ -58,7 +59,13 @@ public class NumberPlayList {
 		Function<Integer, Double> doubleFunction = Integer::doubleValue;
 		myNumberList.forEach( n -> {
 			
-	        	System.out.println("method 6 for each lambda double value :" +doubleFunction.apply(n));
+	        	        System.out.println("method 6 for each lambda double value :" +doubleFunction.apply(n));
+		});
+
+                //method 7: explicit lambda function check even
+		Predicate<Integer> isEvenFunction = n -> n%2 == 0;
+		myNumberList.forEach(n-> {
+        	                System.out.println("method 7 for each  value :" +n+ "check for even " +isEvenFunction.test(n));
 		});
 	}
 
